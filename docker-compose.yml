@@ -1,0 +1,22 @@
+services:
+  web:
+    image: php:apache
+    container_name: php_blog
+    ports:
+      -8083:80
+    volumes:
+      -/var/www/html:/var/www/html
+  
+  web:
+    image: mariadb:latest
+    container_name: mysql_blog
+    ports:
+      -3306:3306
+    volumes:
+      -/var/lib/mysql:/var/lib/mysql
+    environment:
+      - MARIADB_DATABASE=database_blog
+      - MARIADB_USER=kkloud
+      - MARIADB_PASSWORD=Danger@123
+      - MARIADB_ROOT_PASSWORD=Root@123
+    
