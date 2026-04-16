@@ -9,14 +9,13 @@ spec:
     command: ["/bin/sh", "-c", "while true; do sleep 10; done"]
     volumeMounts:
     - name: volume-share
-      mountPath: /tmp/blog
-  containers:
+      mountPath: /tmp/media
   - name: volume-container-devops-2
     image: fedora:latest
     command: ["/bin/sh", "-c", "while true; do sleep 10; done"]
     volumeMounts:
     - name: volume-share
-      mountPath: /tmp/cluster
+      mountPath: /tmp/demo
   volumes:
   - name: volume-share
     emptyDir: {}
